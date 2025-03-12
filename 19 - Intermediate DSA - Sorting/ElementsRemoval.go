@@ -1,5 +1,7 @@
 package main
 
+import "sort"
+
 // Problem Description
 
 // Given an integer array A of size N. You can remove any element from the array in one operation.
@@ -53,6 +55,15 @@ package main
 // Expected Output
 // Provide sample input and click run to see the correct output for the provided input. Use this to improve your problem understanding and test edge cases
 
-func ElementsRemoval(num []int) int {
+func ElementsRemoval(nums []int) int {
+	sort.Slice(nums, func(i, j int) bool {
+		return nums[i] > nums[j]
+	})
 
+	cost := 0
+	for i, num := range nums {
+		cost += num * (i + 1)
+	}
+
+	return cost
 }
