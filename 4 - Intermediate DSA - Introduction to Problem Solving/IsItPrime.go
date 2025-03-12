@@ -1,10 +1,10 @@
-package main
+package dsa
 
 import (
 	"fmt"
 )
 
-func main() {
+func Prime() {
 	var A int
 	fmt.Scanf("%d", &A)
 	flag := true
